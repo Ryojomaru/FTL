@@ -4,6 +4,7 @@ import module.Module;
 import module.Reactor;
 import module.WeaponControl;
 import weapon.DummyGun;
+import weapon.DummyLaserGun;
 import weapon.Weapon;
 
 public class DummyShip extends Ship {
@@ -39,11 +40,15 @@ public class DummyShip extends Ship {
 		
 		// Creates the gun of the ship
 		Weapon w = new DummyGun();
+		Weapon w2 = new DummyLaserGun();
 		// Assigns the gun to the weapon control
+		weaponControl.addWeapon(w2);
 		weaponControl.addWeapon(w);
+
 		
 		// Places the weapon at the front
 		front.setWeapon(w);
+		back.setWeapon(w2);
 		
 		// Adds a crew member to the ship
 		addCrewMember(new CrewMember("Jose"));

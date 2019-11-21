@@ -39,14 +39,14 @@ public class Bindings {
 			System.exit(0);
 		
 		// Module Energy Management
-		if(key.getKeyCode() == KeyEvent.VK_NUMPAD1 && key.isShiftDown())
+		if(key.getKeyCode() == KeyEvent.VK_U && key.isShiftDown())
 			w.player.removeEnergy(1);
-		else if(key.getKeyCode() == KeyEvent.VK_NUMPAD1)
+		else if(key.getKeyCode() == KeyEvent.VK_U)
 			w.player.addEnergy(1);
 		
-		else if(key.getKeyCode() == KeyEvent.VK_NUMPAD2 && key.isShiftDown())
+		else if(key.getKeyCode() == KeyEvent.VK_J && key.isShiftDown())
 			w.player.removeEnergy(2);
-		else if(key.getKeyCode() == KeyEvent.VK_NUMPAD2)
+		else if(key.getKeyCode() == KeyEvent.VK_J)
 			w.player.addEnergy(2);
 		
 		else if(key.getKeyCode() == KeyEvent.VK_NUMPAD3 && key.isShiftDown())
