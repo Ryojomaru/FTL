@@ -1,10 +1,12 @@
 package ship;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
 import display.StdDraw;
 import display.Vector2;
+import main.World;
 import module.Module;
 import module.Reactor;
 import module.WeaponControl;
@@ -31,7 +33,8 @@ public abstract class Ship {
 	protected Collection<Projectile>	projectiles;	// The projectiles shot by the ship
 	protected Tile						target;			// The targeted tile of the enemy ship
 	protected CrewMember				selectedMember; // The currently selected crew member
-	
+
+	protected DecimalFormat df = new DecimalFormat("#.##");
 	/**
 	 * Creates a Ship for the player or the opponent at the provided position.
 	 * @param isPlayer whether the ship is for the player
@@ -48,6 +51,7 @@ public abstract class Ship {
 	// Main Methods
 	
 	/**
+	 * TODO
 	 * Processes the action of the AI.
 	 * @param player the enemy of the AI
 	 */
@@ -263,9 +267,10 @@ public abstract class Ship {
 	 * @param weapon the weapon to shot
 	 */
 	public void shotWeapon(int weapon) {
-		double xSpeed = 1;
-		double ySpeed = 1;
-		Projectile p = weaponControl.shotWeapon(weapon, getWeaponTile(weaponControl.getWeapon(weapon)), new Vector2<Double>(target.getCenterPosition().getX() - position.getX(), target.getCenterPosition().getY() - position.getY()));
+		Projectile p = weaponControl.shotWeapon(weapon, getWeaponTile(weaponControl.getWeapon(weapon)),
+				new Vector2<Double>(
+						target.getCenterPosition().getX() - position.getX(),
+						target.getCenterPosition().getY() - position.getY()));
 		if (p != null)
 			projectiles.add(p);
 	}
@@ -290,9 +295,15 @@ public abstract class Ship {
 	 * @param elapsedTime the time elapsed since the last call
 	 */
 	private void processProjectiles(double elapsedTime) {
-		for (Projectile p : projectiles)
-			if (p != null)
+		for (Projectile p : projectiles){
+			if (p.isOutOfScreen() || !(p.isOutOfRectangle(target.getCenterPosition().getX(),
+					target.getCenterPosition().getY(), 0.01,0.01))){
+				p.setColor(StdDraw.WHITE);
+				p = null;
+			}
+			else
 				p.step(elapsedTime);
+		}
 	}
 	
 	/**
@@ -315,7 +326,6 @@ public abstract class Ship {
 	// Aiming Methods
 	
 	/**
-	 * TODO
 	 * Aims the guns up.
 	 * @param opponent the ship to aim at
 	 */
@@ -325,11 +335,12 @@ public abstract class Ship {
 			target.markTarget();
 			return;
 		}
-		System.err.println("Aiming System Critical Failure !");
+		Tile nextTile = new Tile(new Vector2<>(target.getPosition().getX(),target.getPosition().getY()
+				+ 0.02), false);
+		changeAim(opponent, nextTile);
 	}
 	
 	/**
-	 * TODO
 	 * Aims the guns down.
 	 * @param opponent the ship to aim at
 	 */
@@ -339,11 +350,12 @@ public abstract class Ship {
 			target.markTarget();
 			return;
 		}
-		System.err.println("Aiming System Critical Failure !");
+		Tile nextTile = new Tile(new Vector2<>(target.getPosition().getX(),target.getPosition().getY()
+				- 0.02), false);
+		changeAim(opponent, nextTile);
 	}
 	
 	/**
-	 * TODO
 	 * Aims the guns left.
 	 * @param opponent the ship to aim at
 	 */
@@ -353,11 +365,12 @@ public abstract class Ship {
 			target.markTarget();
 			return;
 		}
-		System.err.println("Aiming System Critical Failure !");
+		Tile nextTile = new Tile(new Vector2<>(target.getPosition().getX() - 0.02,
+				target.getPosition().getY()), false);
+		changeAim(opponent, nextTile);
 	}
 
 	/**
-	 * TODO
 	 * Aims the guns right.
 	 * @param opponent the ship to aim at
 	 */
@@ -367,7 +380,25 @@ public abstract class Ship {
 			target.markTarget();
 			return;
 		}
-		System.err.println("Aiming System Critical Failure !");
+		Tile nextTile = new Tile(new Vector2<>(target.getPosition().getX() + 0.02,
+				target.getPosition().getY() + 0.01), false);
+		changeAim(opponent, nextTile);
+	}
+
+	/**
+	 * Test if nextTile is in opponent layout, if true change target to nextTile
+	 * @param opponent the ship to aim at
+	 * @param nextTile the tile to test
+	 */
+	private void changeAim(Ship opponent, Tile nextTile){
+		for (Tile t: opponent.layout) {
+			if (df.format(t.getPosition().getX()).equals(df.format(nextTile.getPosition().getX())) &&
+					df.format(t.getPosition().getY()).equals(df.format(nextTile.getPosition().getY()))){
+				target.unmarkTarget();
+				target = t;
+				t.markTarget();
+			}
+		}
 	}
 	
 }
