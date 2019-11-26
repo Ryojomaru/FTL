@@ -98,5 +98,8 @@ public abstract class Projectile {
 	public int getDamage() {
 		return damage;
 	}
-	
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
 }
