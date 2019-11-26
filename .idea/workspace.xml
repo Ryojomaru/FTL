@@ -1,27 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="bcf1565a-02b8-4f20-b097-b2baaac790aa" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="9318237a-d27b-4d70-99b5-adae7c7ffbb4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/weapon/DummyLaserGun.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/weapon/LaserShot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/display/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/display/Button.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/display/StdDraw.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/display/StdDraw.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/main/Bindings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/Bindings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/main/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/Start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/DummyShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/DummyShip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/Ship.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/Ship.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/weapon/Weapon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Bindings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Bindings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/WeaponControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/WeaponControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ship/DummyShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/DummyShip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/weapon/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weapon/Weapon.java" afterDir="false" />
+    </list>
+>>>>>>> Victor
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+=======
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+>>>>>>> Victor
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Tv7Kws4WxOxrokYYkM1oXMFxoe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="C:/Program Files (x86)/Git/bin/git.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
+>>>>>>> Victor
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -83,12 +133,22 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="bcf1565a-02b8-4f20-b097-b2baaac790aa" name="Default Changelist" comment="" />
       <created>1574328654866</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574328654866</updated>
       <workItem from="1574328656554" duration="15227000" />
+=======
+      <changelist id="9318237a-d27b-4d70-99b5-adae7c7ffbb4" name="Default Changelist" comment="" />
+      <created>1574343105891</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574343105891</updated>
+      <workItem from="1574343107394" duration="8254000" />
+      <workItem from="1574351627072" duration="4371000" />
+>>>>>>> Victor
     </task>
     <servers />
   </component>
@@ -100,7 +160,13 @@
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< HEAD
             <State />
+=======
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+>>>>>>> Victor
           </value>
         </entry>
       </map>
