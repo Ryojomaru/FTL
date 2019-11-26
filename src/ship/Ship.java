@@ -25,7 +25,7 @@ public abstract class Ship {
 	
 	protected Reactor					reactor;		// The reactor of the ship
 	protected WeaponControl				weaponControl;	// The weapon control system
-	
+
 	protected Collection<CrewMember> 	crew;			// The crew members in the ship
 	protected Collection<Tile>			layout;			// The layout of the ship
 	protected boolean					isPlayer;		// Whether this ship is owned by the player
@@ -296,13 +296,7 @@ public abstract class Ship {
 	 */
 	private void processProjectiles(double elapsedTime) {
 		for (Projectile p : projectiles){
-			if (p.isOutOfScreen() || !(p.isOutOfRectangle(target.getCenterPosition().getX(),
-					target.getCenterPosition().getY(), 0.01,0.01))){
-				p.setColor(StdDraw.WHITE);
-				p = null;
-			}
-			else
-				p.step(elapsedTime);
+			p.step(elapsedTime);
 		}
 	}
 	
@@ -320,7 +314,8 @@ public abstract class Ship {
 	 * @param p the projectile to process
 	 */
 	public void applyDamage(Projectile p) {
-		
+		if (this.currentHull - p.getDamage() < 0) this.currentHull = 0;
+		else this.currentHull -= p.getDamage();
 	}
 	
 	// Aiming Methods
@@ -400,5 +395,8 @@ public abstract class Ship {
 			}
 		}
 	}
-	
+
+	public Collection<Tile> getLayout() {
+		return layout;
+	}
 }
