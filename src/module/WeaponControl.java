@@ -129,12 +129,14 @@ public class WeaponControl extends Module {
 	 */
 	public void chargeTime(double time) {
 		for (Weapon w : weapons)
+
 			if (w != null) {
-				if (w.isActivated())
-					w.charge(time);
+				if (w.isActivated()) {
+					w.charge(time); }
 				else
-					w.charge(-3*time);
+					w.charge(-3 * time);
 			}
+
 	}
 	
 	/**
@@ -176,10 +178,13 @@ public class WeaponControl extends Module {
 	 * @return the projectile created by the weapon
 	 */
 	public Projectile shotWeapon(int weapon, Tile tile, Vector2<Double> dir) {
-		if (weapons[weapon] == null || !weapons[weapon].isCharged())
+		if (weapons[weapon] == null || !weapons[weapon].isCharged()) {
+			System.out.println("no weapon is there to be shot");
 			return null;
+		}
 		Vector2<Double> v = tile.getPosition();
 		weapons[weapon].resetCharge();
+		System.out.println("the weapon should've been shot"); //TODO: remove when done testing
 		return weapons[weapon].shot(new Vector2<Double>(v.getX(), v.getY()), dir );
 	}
 	
