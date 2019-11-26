@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list default="true" id="bcf1565a-02b8-4f20-b097-b2baaac790aa" name="Default Changelist" comment="" />
+    =======
     <list default="true" id="9318237a-d27b-4d70-99b5-adae7c7ffbb4" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
@@ -22,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/src/ship/DummyShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/DummyShip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/weapon/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weapon/Weapon.java" afterDir="false" />
     </list>
+    &gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +40,7 @@
         <option value="Class" />
       </list>
     </option>
+    &gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,15 +49,22 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Tv7Kws4WxOxrokYYkM1oXMFxoe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="C:/Program Files (x86)/Git/bin/git.exe" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    =======
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
+    &gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -115,6 +126,13 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="bcf1565a-02b8-4f20-b097-b2baaac790aa" name="Default Changelist" comment="" />
+      <created>1574328654866</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574328654866</updated>
+      <workItem from="1574328656554" duration="15227000" />
+      =======
       <changelist id="9318237a-d27b-4d70-99b5-adae7c7ffbb4" name="Default Changelist" comment="" />
       <created>1574343105891</created>
       <option name="number" value="Default" />
@@ -122,6 +140,7 @@
       <updated>1574343105891</updated>
       <workItem from="1574343107394" duration="8254000" />
       <workItem from="1574351627072" duration="4371000" />
+      &gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor
     </task>
     <servers />
   </component>
@@ -133,9 +152,12 @@
       <map>
         <entry key="MAIN">
           <value>
+            <State />
+            =======
             <State>
               <option name="COLUMN_ORDER" />
             </State>
+            &gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor
           </value>
         </entry>
       </map>
