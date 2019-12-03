@@ -29,7 +29,7 @@ public class DummyGun extends Weapon {
 	 * Creates a dummy gun
 	 */
 	public DummyGun() {
-		name = "DummyGun";
+		name = "Dummy";
 		requiredPower = 1;
 		chargeTime = 1;
 		shotDamage = 2;

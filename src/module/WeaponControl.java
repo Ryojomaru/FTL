@@ -3,6 +3,8 @@ import display.Button;
 import display.StdDraw;
 import display.Vector2;
 import ship.Tile;
+import weapon.IonCannon;
+import weapon.LaserGun;
 import weapon.Projectile;
 import weapon.Weapon;
 
@@ -157,20 +159,21 @@ public class WeaponControl extends Module {
 			StdDraw.setPenColor(StdDraw.GRAY);
 			if (w.getCurrentCharge() == w.getChargeTime())
 				StdDraw.setPenColor(StdDraw.YELLOW);
-			StdDraw.filledRectangle(x+0.1+(0.45*i), y+0.1, 0.045, (w.getCurrentCharge()/w.getChargeTime())*0.035);
+			StdDraw.filledRectangle(x+0.1+(0.1*i), y+0.1, 0.045, (w.getCurrentCharge()/w.getChargeTime())*0.035);
 			if (w.isActivated())
 				StdDraw.setPenColor(StdDraw.CYAN);
 			if (weaponBtns[i] == null)
-				weaponBtns[i] = new WeaponButton(new Vector2<Double>(x+0.1+(0.45*i), y+0.1), new Vector2<Double>(0.045, 0.035), i);
+				weaponBtns[i] = new WeaponButton(new Vector2<Double>(x+0.1+(0.1*i), y+0.1), new Vector2<Double>(0.045, 0.035), i);
 			else
 				weaponBtns[i].draw();
-			StdDraw.rectangle(x+0.1+(0.45*i), y+0.1, 0.045, 0.035);
+			StdDraw.rectangle(x+0.1+(0.1*i), y+0.1, 0.045, 0.035);
 			StdDraw.setPenColor(StdDraw.BLACK);
-			StdDraw.text(x+0.1+(0.45*i), y+0.1, w.getName());
+			StdDraw.text(x+0.1+(0.1*i), y+0.1, w.getName());
 		}
 	}
 	
 	/**
+	 * //TODO: add code for Ion deactivation
 	 * Shots the weapon from the tile in the direction provided.
 	 * @param weapon the weapon to shot
 	 * @param tile the tile to shot it from
@@ -179,12 +182,17 @@ public class WeaponControl extends Module {
 	 */
 	public Projectile shotWeapon(int weapon, Tile tile, Vector2<Double> dir) {
 		if (weapons[weapon] == null || !weapons[weapon].isCharged()) {
-			System.out.println("no weapon is there to be shot");
 			return null;
 		}
 		Vector2<Double> v = tile.getPosition();
 		weapons[weapon].resetCharge();
-		System.out.println("the weapon should've been shot"); //TODO: remove when done testing
+		if(weapons[weapon] instanceof LaserGun) { //on calcule la puissance du laser si c'est l'arme tirée
+			weapons[weapon].setShotDamage(Math.min(this.allocatedEnergy,((LaserGun)weapons[weapon]).getMaxDamage()));
+			System.out.println(weapons[weapon].getShotDamage());//TODO : remove when done testing
+		} else if(weapons[weapon] instanceof IonCannon) { //on calcule la puissance du laser si c'est l'arme tirée
+			((IonCannon)weapons[weapon]).setDeactivationTime(Math.min(this.allocatedEnergy,((IonCannon)weapons[weapon]).getMaxDeactivationTime()));
+		}
+		System.out.println("hi");//TODO: remove when done testing
 		return weapons[weapon].shot(new Vector2<Double>(v.getX(), v.getY()), dir );
 	}
 	

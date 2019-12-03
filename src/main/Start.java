@@ -10,7 +10,7 @@ public class Start {
 	
 	public static void main(String[] args) {
 		// Creates the canvas of the game
-		StdDraw.setCanvasSize(1000, 768);
+		StdDraw.setCanvasSize(700, 700);
 		
 		// Enables double buffering to allow animation
 		StdDraw.enableDoubleBuffering();

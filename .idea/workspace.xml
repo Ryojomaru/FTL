@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bcf1565a-02b8-4f20-b097-b2baaac790aa" name="Default Changelist" comment="" />
-    =======
-    <list default="true" id="9318237a-d27b-4d70-99b5-adae7c7ffbb4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/weapon/DummyLaserGun.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/weapon/LaserShot.java" afterDir="false" />
+    <list default="true" id="bcf1565a-02b8-4f20-b097-b2baaac790aa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/weapon/IonCannon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/weapon/LaserGun.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/weapon/MissileLauncher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/display/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/display/Button.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/display/StdDraw.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/display/StdDraw.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FTL/main/Bindings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/Bindings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FTL/main/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/Start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl$WeaponButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl$WeaponButton.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/DummyShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/DummyShip.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/Ship.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/Ship.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/DummyGun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/weapon/DummyGun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/DummyLaserGun$DummyLaserShot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/DummyLaserGun.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/LaserShot.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/weapon/Weapon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Bindings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Bindings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Start.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/WeaponControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/WeaponControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ship/DummyShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/DummyShip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/weapon/DummyGun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weapon/DummyGun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/weapon/DummyLaserGun.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/weapon/LaserShot.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/weapon/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weapon/Weapon.java" afterDir="false" />
     </list>
-    &gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +41,6 @@
         <option value="Class" />
       </list>
     </option>
-    &gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,33 +50,23 @@
   </component>
   <component name="ProjectId" id="1Tv7Kws4WxOxrokYYkM1oXMFxoe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/Git/bin/git.exe" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    =======
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
-    &gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -121,26 +111,36 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="bcf1565a-02b8-4f20-b097-b2baaac790aa" name="Default Changelist" comment="" />
-      <created>1574328654866</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1574328654866</updated>
-      <workItem from="1574328656554" duration="15227000" />
-      =======
-      <changelist id="9318237a-d27b-4d70-99b5-adae7c7ffbb4" name="Default Changelist" comment="" />
       <created>1574343105891</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574343105891</updated>
+      <workItem from="1574328656554" duration="15227000" />
       <workItem from="1574343107394" duration="8254000" />
       <workItem from="1574351627072" duration="4371000" />
-      &gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor
+      <workItem from="1574778555823" duration="724000" />
+      <workItem from="1574779514088" duration="4447000" />
+      <workItem from="1574851323398" duration="2812000" />
+      <workItem from="1574935825800" duration="407000" />
+      <workItem from="1575381921463" duration="1459000" />
     </task>
     <servers />
   </component>
@@ -152,15 +152,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
-            =======
             <State>
               <option name="COLUMN_ORDER" />
             </State>
-            &gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="491" y="101" width="374" height="599" key="#com.intellij.ide.util.MemberChooser" timestamp="1575382732814">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="491" y="101" width="374" height="599" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1575382732814" />
+    <state width="1320" height="172" key="GridCell.Tab.0.bottom" timestamp="1575383380215">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="172" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1575383380215" />
+    <state width="1320" height="172" key="GridCell.Tab.0.center" timestamp="1575383380214">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="172" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1575383380214" />
+    <state width="1320" height="172" key="GridCell.Tab.0.left" timestamp="1575383380214">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="172" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1575383380214" />
+    <state width="1320" height="172" key="GridCell.Tab.0.right" timestamp="1575383380214">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="172" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1575383380214" />
   </component>
 </project>
