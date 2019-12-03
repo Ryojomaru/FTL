@@ -2,31 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcf1565a-02b8-4f20-b097-b2baaac790aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/weapon/IonCannon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/weapon/LaserGun.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/weapon/MissileLauncher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/module/Engine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/module/Shield.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/main/Bindings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/Bindings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/main/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/Start.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl$WeaponButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl$WeaponButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/DummyShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/DummyShip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/Ship.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/Ship.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/DummyGun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/weapon/DummyGun.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/DummyLaserGun$DummyLaserShot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/DummyLaserGun.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/LaserShot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/weapon/Weapon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Bindings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Bindings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/WeaponControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/WeaponControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ship/DummyShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/DummyShip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/weapon/DummyGun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weapon/DummyGun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/weapon/DummyLaserGun.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/weapon/LaserShot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/weapon/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weapon/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ship/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/Ship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ship/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/Tile.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,17 +41,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -136,11 +113,10 @@
       <workItem from="1574328656554" duration="15227000" />
       <workItem from="1574343107394" duration="8254000" />
       <workItem from="1574351627072" duration="4371000" />
-      <workItem from="1574778555823" duration="724000" />
-      <workItem from="1574779514088" duration="4447000" />
-      <workItem from="1574851323398" duration="2812000" />
-      <workItem from="1574935825800" duration="407000" />
-      <workItem from="1575381921463" duration="1459000" />
+      <workItem from="1574843107050" duration="2154000" />
+      <workItem from="1574886943800" duration="208000" />
+      <workItem from="1574888145213" duration="88000" />
+      <workItem from="1575379026846" duration="449000" />
     </task>
     <servers />
   </component>

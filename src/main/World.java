@@ -5,6 +5,7 @@ import display.StdDraw;
 import display.Vector2;
 import ship.DummyShip;
 import ship.Ship;
+import ship.Tile;
 import weapon.Projectile;
 
 /**
@@ -52,13 +53,35 @@ public class World {
 	}
 	
 	/**
-	 * TODO
 	 * Processes the projectiles hit
 	 * @param projectiles collection of projectiles to check for hit
 	 * @param isPlayer whether the own of the projectiles is the player
 	 */
 	private void processHit(Collection<Projectile> projectiles, boolean isPlayer) {
-		
+		if (!(isPlayer)){
+			processDamageHit(projectiles, player);
+		} else {
+			processDamageHit(projectiles, opponent);
+		}
+	}
+
+	/**
+	 * Test if the ship is hit by projectiles
+	 * @param projectiles collection of projectiles to check for hit
+	 * @param ship ship to hit
+	 */
+	private void processDamageHit(Collection<Projectile> projectiles, Ship ship){
+		for (Projectile p: projectiles) {
+			for (Tile t: ship.getLayout()) {
+				if (p != null) {
+					if (!(p.isOutOfRectangle(t.getCenterPosition().getX(), t.getCenterPosition().getY(), 0.01, 0.01))) {
+						ship.applyDamage(p);
+						projectiles.remove(p);
+						return;
+					}
+				}
+			}
+		}
 	}
 	
 	/**

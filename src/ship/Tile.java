@@ -206,5 +206,8 @@ public class Tile {
 	public void removeCrewMember() {
 		member = null;
 	}
-	
+
+    public boolean isAimed() {
+        return isAimed;
+    }
 }
