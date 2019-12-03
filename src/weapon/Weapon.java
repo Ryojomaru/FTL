@@ -78,7 +78,6 @@ public abstract class Weapon {
 	 * @return the current charge
 	 */
 	public double getCurrentCharge() {
-		System.out.println(currentCharge);
 		return currentCharge;
 
 	}
