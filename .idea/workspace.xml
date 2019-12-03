@@ -2,25 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcf1565a-02b8-4f20-b097-b2baaac790aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/weapon/DummyLaserGun.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/weapon/LaserShot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/module/Engine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/module/Shield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/display/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/display/Button.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/display/StdDraw.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/display/StdDraw.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/main/Bindings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/Bindings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/main/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/Start.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/DummyShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/DummyShip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/Ship.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/Ship.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/weapon/Weapon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Bindings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Bindings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module/WeaponControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/WeaponControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ship/DummyShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/DummyShip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/weapon/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/weapon/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ship/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/Ship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ship/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/Tile.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +36,8 @@
   <component name="ProjectId" id="1Tv7Kws4WxOxrokYYkM1oXMFxoe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
@@ -110,7 +101,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="bcf1565a-02b8-4f20-b097-b2baaac790aa" name="Default Changelist" comment="" />
-      <changelist id="9318237a-d27b-4d70-99b5-adae7c7ffbb4" name="Default Changelist" comment="" />
       <created>1574343105891</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -118,10 +108,27 @@
       <workItem from="1574328656554" duration="15227000" />
       <workItem from="1574343107394" duration="8254000" />
       <workItem from="1574351627072" duration="4371000" />
+      <workItem from="1574843107050" duration="2154000" />
+      <workItem from="1574886943800" duration="208000" />
+      <workItem from="1574888145213" duration="88000" />
+      <workItem from="1575379026846" duration="449000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

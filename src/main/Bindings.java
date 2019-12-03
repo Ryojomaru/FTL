@@ -2,6 +2,7 @@ package main;
 import java.awt.event.KeyEvent;
 
 import display.StdDraw;
+import ship.Tile;
 
 /**
  * The bindings class processes the key pressed by the player.
@@ -66,29 +67,42 @@ public class Bindings {
 		
 		
 		// Weapon Management
-		else if(key.getKeyCode() == KeyEvent.VK_A && key.isControlDown())
-			w.player.shotWeapon(0);
+		else if(key.getKeyCode() == KeyEvent.VK_A && key.isControlDown()){
+			for (Tile t : w.player.getLayout()){
+				if (t.isAimed())
+					w.player.shotWeapon(0);
+			}
+		}
 		else if(key.getKeyCode() == KeyEvent.VK_A && key.isShiftDown())
 			w.player.deactiveWeapon(0);
 		else if(key.getKeyCode() == KeyEvent.VK_A)
 			w.player.activeWeapon(0);
 		
 		else if(key.getKeyCode() == KeyEvent.VK_Z && key.isControlDown())
-			w.player.shotWeapon(1);
+			for (Tile t : w.player.getLayout()){
+				if (t.isAimed())
+					w.player.shotWeapon(1);
+			}
 		else if(key.getKeyCode() == KeyEvent.VK_Z && key.isShiftDown())
 			w.player.deactiveWeapon(1);
 		else if(key.getKeyCode() == KeyEvent.VK_Z)
 			w.player.activeWeapon(1);
 		
 		else if(key.getKeyCode() == KeyEvent.VK_E && key.isControlDown())
-			w.player.shotWeapon(2);
+			for (Tile t : w.player.getLayout()){
+				if (t.isAimed())
+					w.player.shotWeapon(2);
+			}
 		else if(key.getKeyCode() == KeyEvent.VK_E && key.isShiftDown())
 			w.player.deactiveWeapon(2);
 		else if(key.getKeyCode() == KeyEvent.VK_E)
 			w.player.activeWeapon(2);
 		
 		else if(key.getKeyCode() == KeyEvent.VK_R && key.isControlDown())
-			w.player.shotWeapon(3);
+			for (Tile t : w.player.getLayout()){
+				if (t.isAimed())
+					w.player.shotWeapon(3);
+			}
 		else if(key.getKeyCode() == KeyEvent.VK_R && key.isShiftDown())
 			w.player.deactiveWeapon(3);
 		else if(key.getKeyCode() == KeyEvent.VK_R)

@@ -267,7 +267,7 @@ public abstract class Ship {
 	 * @param weapon the weapon to shot
 	 */
 	public void shotWeapon(int weapon) {
-		Projectile p = weaponControl.shotWeapon(weapon, getWeaponTile(weaponControl.getWeapon(weapon)),
+	    Projectile p = weaponControl.shotWeapon(weapon, getWeaponTile(weaponControl.getWeapon(weapon)),
 				new Vector2<Double>(
 						target.getCenterPosition().getX() - position.getX(),
 						target.getCenterPosition().getY() - position.getY()));
@@ -309,7 +309,6 @@ public abstract class Ship {
 	}
 
 	/**
-	 * TODO
 	 * Applies the damage a projectile did.
 	 * @param p the projectile to process
 	 */
