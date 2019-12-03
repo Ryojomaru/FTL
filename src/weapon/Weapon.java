@@ -107,8 +107,15 @@ public abstract class Weapon {
 	 * @return whether the weapon is fully charged
 	 */
 	public boolean isCharged() {
-		System.out.println("charged ? : " + (currentCharge >= chargeTime));//todo: remove when done testing
 		return currentCharge >= chargeTime;
+	}
+
+	public void setShotDamage(int shotDamage) {
+		this.shotDamage = shotDamage;
+	}
+
+	public int getShotDamage() {
+		return shotDamage;
 	}
 	
 }

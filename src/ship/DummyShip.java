@@ -3,9 +3,7 @@ import display.Vector2;
 import module.Module;
 import module.Reactor;
 import module.WeaponControl;
-import weapon.DummyGun;
-import weapon.DummyLaserGun;
-import weapon.Weapon;
+import weapon.*;
 
 public class DummyShip extends Ship {
 	
@@ -28,7 +26,7 @@ public class DummyShip extends Ship {
 		Tile mid = new Tile(getNextTilePosition(), isPlayer);
 		addTile(mid);
 		
-		weaponControl = new WeaponControl(new Vector2<Double>(0.08, 0.015), getNextTilePosition(), isPlayer, 1, 4);
+		weaponControl = new WeaponControl(new Vector2<Double>(0.08, 0.015), getNextTilePosition(), isPlayer, 5, 4);
 		addTile(weaponControl);
 		
 		Tile back = new Tile(getNextTilePosition(), isPlayer);
@@ -40,15 +38,23 @@ public class DummyShip extends Ship {
 		
 		// Creates the gun of the ship
 		Weapon w = new DummyGun();
-		Weapon w2 = new DummyLaserGun();
+		Weapon w2 = new LaserGun();
+		Weapon w3 = new MissileLauncher();
+		Weapon w4 = new IonCannon();
 		// Assigns the gun to the weapon control
 		weaponControl.addWeapon(w2);
 		weaponControl.addWeapon(w);
+		weaponControl.addWeapon(w4);
+		weaponControl.addWeapon(w3);
+
+
 
 		
 		// Places the weapon at the front
 		front.setWeapon(w);
 		back.setWeapon(w2);
+		mid.setWeapon(w3);
+		weaponControl.setWeapon(w4);
 		
 		// Adds a crew member to the ship
 		addCrewMember(new CrewMember("Jose"));

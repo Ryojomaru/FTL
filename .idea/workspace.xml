@@ -35,22 +35,15 @@
   </component>
   <component name="ProjectId" id="1Tv7Kws4WxOxrokYYkM1oXMFxoe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -95,6 +88,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -130,5 +135,27 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="491" y="101" width="374" height="599" key="#com.intellij.ide.util.MemberChooser" timestamp="1575382732814">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="491" y="101" width="374" height="599" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1575382732814" />
+    <state width="1320" height="172" key="GridCell.Tab.0.bottom" timestamp="1575383380215">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="172" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1575383380215" />
+    <state width="1320" height="172" key="GridCell.Tab.0.center" timestamp="1575383380214">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="172" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1575383380214" />
+    <state width="1320" height="172" key="GridCell.Tab.0.left" timestamp="1575383380214">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="172" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1575383380214" />
+    <state width="1320" height="172" key="GridCell.Tab.0.right" timestamp="1575383380214">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="172" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1575383380214" />
   </component>
 </project>
