@@ -34,7 +34,8 @@ public abstract class Ship {
 	protected Tile						target;			// The targeted tile of the enemy ship
 	protected CrewMember				selectedMember; // The currently selected crew member
 
-	protected DecimalFormat df = new DecimalFormat("#.##");
+	protected Tile 						selectedTile;	// The Tile where the currently selected crew memebr is
+	protected DecimalFormat 			df = new DecimalFormat("#.##"); // To round integer to the right format
 	/**
 	 * Creates a Ship for the player or the opponent at the provided position.
 	 * @param isPlayer whether the ship is for the player
@@ -159,6 +160,7 @@ public abstract class Ship {
 		for (CrewMember m : crew)
 			if (j++ == i) {
 				selectedMember = m;
+				selectedTile = getSelectedCrewTile(m);
 				selectedMember.select();
 				return;
 			}
@@ -210,7 +212,28 @@ public abstract class Ship {
 	private Tile getFirstTile() {
 		return layout.iterator().next();
 	}
-	
+
+	private Tile getSelectedCrewTile(CrewMember m) {
+		Iterator<Tile> it = layout.iterator();
+		while (it.hasNext()) {
+			Tile t = it.next();
+			if(t.isCrewMember(m)) return t;
+		}
+		return null;
+	}
+
+	public Tile getNextUnselectedTile(Tile current){
+	    Iterator<Tile> it = layout.iterator();
+	    boolean a = false;
+	    while (it.hasNext()){
+	        Tile t = it.next();
+			if (a){
+				return t;
+			}
+	        if (t == current) a = true;
+        }
+	    return layout.iterator().next();
+    }
 	// Energy Methods
 
 	/**
@@ -269,8 +292,10 @@ public abstract class Ship {
 	public void shotWeapon(int weapon) {
 	    Projectile p = weaponControl.shotWeapon(weapon, getWeaponTile(weaponControl.getWeapon(weapon)),
 				new Vector2<Double>(
-						target.getCenterPosition().getX() - position.getX(),
-						target.getCenterPosition().getY() - position.getY()));
+						target.getCenterPosition().getX() -
+								getWeaponTile(weaponControl.getWeapon(weapon)).getWeaponPosition().getX(),
+						target.getCenterPosition().getY() -
+								getWeaponTile(weaponControl.getWeapon(weapon)).getWeaponPosition().getY()));
 		if (p != null)
 			projectiles.add(p);
 	}
@@ -397,5 +422,17 @@ public abstract class Ship {
 
 	public Collection<Tile> getLayout() {
 		return layout;
+	}
+
+    public CrewMember getSelectedMember() {
+        return selectedMember;
+    }
+
+	public int getCurrentHull() {
+		return currentHull;
+	}
+
+	public Tile getSelectedTile() {
+		return selectedTile;
 	}
 }

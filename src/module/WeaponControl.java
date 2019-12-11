@@ -184,7 +184,7 @@ public class WeaponControl extends Module {
 		if (weapons[weapon] == null || !weapons[weapon].isCharged()) {
 			return null;
 		}
-		Vector2<Double> v = tile.getPosition();
+		Vector2<Double> v = tile.getWeaponPosition();
 		weapons[weapon].resetCharge();
 		if(weapons[weapon] instanceof LaserGun) { //on calcule la puissance du laser si c'est l'arme tirée
 			weapons[weapon].setShotDamage(Math.min(this.allocatedEnergy,((LaserGun)weapons[weapon]).getMaxDamage()));

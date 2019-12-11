@@ -50,6 +50,14 @@ public class World {
 		processHit(opponent.getProjectiles(), false);
 		
 		time = System.currentTimeMillis();
+
+		if (opponent.getCurrentHull() == 0){
+			opponent = new DummyShip(false, new Vector2<Double>(0.8, 0.5));
+		}
+
+		if (player.getCurrentHull() == 0){
+			System.exit(0);
+		}
 	}
 	
 	/**
