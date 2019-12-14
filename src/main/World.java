@@ -13,8 +13,9 @@ import weapon.Projectile;
  */
 public class World {
 	
-	private Bindings 	bind;	// The bindings of the game.
-	private long 		time;	// The current time 
+	private Bindings 	bind;		// The bindings of the game.
+	private long 		time;		// The current time
+	private boolean		canContinue;// Player have to choose reward for winning
 	
 	Ship player;				// The ship of the player
 	Ship opponent;				// The ship of the opponent
@@ -28,6 +29,7 @@ public class World {
 		player = new DummyShip(true, new Vector2<Double>(0.3, 0.5));
 		opponent = new DummyShip(false, new Vector2<Double>(0.8, 0.5));
 		time = System.currentTimeMillis();
+		canContinue = true;
 	}
 	
 	/**
@@ -41,17 +43,22 @@ public class World {
 	 * Makes a step in the world.
 	 */
 	public void step() {
-		player.step(((double) (System.currentTimeMillis()-time))/1000);
-		opponent.step(((double) (System.currentTimeMillis()-time))/1000);
-		
-		opponent.ai(player);
-		
-		processHit(player.getProjectiles(), true);
-		processHit(opponent.getProjectiles(), false);
-		
-		time = System.currentTimeMillis();
+		if (canContinue) {
+			player.step(((double) (System.currentTimeMillis() - time)) / 1000);
+			opponent.step(((double) (System.currentTimeMillis() - time)) / 1000);
 
+			opponent.ai(player);
+
+			processHit(player.getProjectiles(), true);
+			processHit(opponent.getProjectiles(), false);
+
+			time = System.currentTimeMillis();
+		}
 		if (opponent.getCurrentHull() == 0){
+			canContinue = false;
+			StdDraw.clear();
+			player.getProjectiles().clear();
+			draw();
 			opponent = new DummyShip(false, new Vector2<Double>(0.8, 0.5));
 		}
 
@@ -82,6 +89,10 @@ public class World {
 		for (Projectile p: projectiles) {
 			for (Tile t: ship.getLayout()) {
 				if (p != null) {
+					if (p.isOutOfScreen()){
+						projectiles.remove(p);
+						return;
+					}
 					if (!(p.isOutOfRectangle(t.getCenterPosition().getX(), t.getCenterPosition().getY(), 0.01, 0.01))) {
 						ship.applyDamage(p);
 						projectiles.remove(p);

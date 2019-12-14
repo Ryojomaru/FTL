@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcf1565a-02b8-4f20-b097-b2baaac790aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FTL/main/Bindings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/Bindings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/main/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/Start.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/module/WeaponControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/main/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/World.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/module/Shield.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/module/Shield.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/DummyShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/DummyShip.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/Ship.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/Ship.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/Tile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/IonCannon$IonProjectile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/weapon/IonCannon$IonProjectile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTL/weapon/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/weapon/Weapon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Bindings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Bindings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Start.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/Shield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/Shield.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module/WeaponControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/WeaponControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ship/DummyShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/DummyShip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ship/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ship/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/Tile.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +125,9 @@
       <workItem from="1574886943800" duration="208000" />
       <workItem from="1574888145213" duration="88000" />
       <workItem from="1575379026846" duration="5956000" />
-      <workItem from="1576076574325" duration="10969000" />
+      <workItem from="1576076574325" duration="12428000" />
+      <workItem from="1576165445060" duration="7772000" />
+      <workItem from="1576250352744" duration="6921000" />
     </task>
     <servers />
   </component>

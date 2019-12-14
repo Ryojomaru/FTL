@@ -71,7 +71,11 @@ public class Bindings {
         else if(key.getKeyCode() == KeyEvent.VK_A && key.isControlDown()){
             for (Tile t : w.opponent.getLayout()){
                 if (t.isAimed())
-                    w.player.shotWeapon(0);
+                    if (w.player.isWeaponShotCorrectly(w.opponent)){
+                        w.player.shotWeapon(0);
+                    }  else {
+                        w.player.missShotWeapon(0);
+                    }
             }
         }
         else if(key.getKeyCode() == KeyEvent.VK_A && key.isShiftDown())
@@ -82,7 +86,11 @@ public class Bindings {
         else if(key.getKeyCode() == KeyEvent.VK_Z && key.isControlDown())
             for (Tile t : w.opponent.getLayout()){
                 if (t.isAimed())
-                    w.player.shotWeapon(1);
+                    if (w.player.isWeaponShotCorrectly(w.opponent)){
+                        w.player.shotWeapon(1);
+                    }  else {
+                        w.player.missShotWeapon(1);
+                    }
             }
         else if(key.getKeyCode() == KeyEvent.VK_Z && key.isShiftDown())
             w.player.deactiveWeapon(1);
@@ -92,7 +100,11 @@ public class Bindings {
         else if(key.getKeyCode() == KeyEvent.VK_E && key.isControlDown())
             for (Tile t : w.opponent.getLayout()){
                 if (t.isAimed())
-                    w.player.shotWeapon(2);
+                    if (w.player.isWeaponShotCorrectly(w.opponent)){
+                        w.player.shotWeapon(2);
+                    }  else {
+                        w.player.missShotWeapon(2);
+                    }
             }
         else if(key.getKeyCode() == KeyEvent.VK_E && key.isShiftDown())
             w.player.deactiveWeapon(2);
@@ -102,7 +114,11 @@ public class Bindings {
         else if(key.getKeyCode() == KeyEvent.VK_R && key.isControlDown())
             for (Tile t : w.opponent.getLayout()){
                 if (t.isAimed())
-                    w.player.shotWeapon(3);
+                    if (w.player.isWeaponShotCorrectly(w.opponent)){
+                        w.player.shotWeapon(3);
+                    }  else {
+                        w.player.missShotWeapon(3);
+                    }
             }
         else if(key.getKeyCode() == KeyEvent.VK_R && key.isShiftDown())
             w.player.deactiveWeapon(3);

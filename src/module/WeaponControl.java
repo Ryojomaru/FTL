@@ -63,7 +63,7 @@ public class WeaponControl extends Module {
 	public WeaponControl(Vector2<Double> hudPos, Vector2<Double> tilePos, boolean isPlayer, int initialLevel, int amountWeapons) {
 		super(hudPos, tilePos, isPlayer);
 		name = "Weapons";
-		maxLevel = 8;
+		maxLevel = 4;
 		currentLevel = initialLevel;
 		allocatedEnergy = 0;
 		amountDamage = 0;
