@@ -3,6 +3,8 @@ import display.StdDraw;
 import display.Vector2;
 import weapon.Weapon;
 
+import java.util.ArrayList;
+
 /**
  * A tile is a cell of the ship's layout.
  * A weapon can be attached to the tile and a crew member 
@@ -11,7 +13,7 @@ import weapon.Weapon;
 public class Tile {
 	
 	private 		Weapon 			weapon;		// The weapon assigned to the tile
-	private 		CrewMember 		member;		// The crew member on the tile
+	private         ArrayList<CrewMember> members;		// The crew member on the tile
 	private 		boolean 		isAimed;	// Whether the tile aimed at
 	private 		boolean 		isPlayer;	// Whether the tile is owned by the player
 	protected final Vector2<Double> tilePos;	// The position of the tile
@@ -25,6 +27,7 @@ public class Tile {
 	public Tile(Vector2<Double> position, boolean isPlayer) {
 		this.tilePos = position;
 		this.isPlayer = isPlayer;
+		this.members = new ArrayList<CrewMember>();
 	}
 	
 	/**
@@ -32,7 +35,7 @@ public class Tile {
 	 * @return whether the tile has a crew member
 	 */
 	public boolean hasCrewMember() {
-		return member != null;
+		return !members.isEmpty() ;
 	}
 	
 	/**
@@ -40,7 +43,10 @@ public class Tile {
 	 * @param member the crew member to put inside the tile
 	 */
 	public void setCrewMember(CrewMember member) {
-		this.member = member;
+        for (CrewMember c: members) {
+            if (c == member) return;
+        }
+        members.add(member);
 	}
 	
 	/**
@@ -68,8 +74,11 @@ public class Tile {
 		drawHorizontalWall(x,y);
 		x-=0.02;
 		drawVerticalWall(x,y);
-		if(member != null)
-			member.draw(getCenterPosition());
+		if(!members.isEmpty()){
+            for (CrewMember c: members) {
+                c.draw(getCenterPosition());
+            }
+        }
 		StdDraw.setPenColor(StdDraw.BLACK);
 	}
 	
@@ -197,14 +206,17 @@ public class Tile {
 	 * @return whether the crew member is the one in the tile
 	 */
 	public boolean isCrewMember(CrewMember member) {
-		return this.member == member;
+        for (CrewMember c: members) {
+            if (c == member) return true;
+        }
+        return false;
 	}
 
 	/**
 	 * Removes the crew member of the tile.
 	 */
 	public void removeCrewMember() {
-		member = null;
+	    members.clear();
 	}
 
     public boolean isAimed() {

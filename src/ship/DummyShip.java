@@ -1,8 +1,6 @@
 package ship;
 import display.Vector2;
-import module.Module;
-import module.Reactor;
-import module.WeaponControl;
+import module.*;
 import weapon.*;
 
 public class DummyShip extends Ship {
@@ -14,7 +12,7 @@ public class DummyShip extends Ship {
 		// Sets the characteristics of the ship.
 		totalHull 		= 30;
 		currentHull		= 30;
-		modules = new Module[2];
+		modules = new Module[4];
 		
 		// Creates the tiles for the layout of the ship
 		Tile front = new Tile(getNextTilePosition(), isPlayer);
@@ -23,18 +21,20 @@ public class DummyShip extends Ship {
 		reactor = new Reactor(new Vector2<Double>(0.025, 0.015), getNextTilePosition(),isPlayer, 8);
 		addTile(reactor);
 		
-		Tile mid = new Tile(getNextTilePosition(), isPlayer);
-		addTile(mid);
+		engine = new Engine(new Vector2<Double>(0.045,0.015), getNextTilePosition(), isPlayer,1);
+		addTile(engine);
 		
-		weaponControl = new WeaponControl(new Vector2<Double>(0.08, 0.015), getNextTilePosition(), isPlayer, 5, 4);
+		weaponControl = new WeaponControl(new Vector2<Double>(0.08, 0.015), getNextTilePosition(), isPlayer, 4, 4);
 		addTile(weaponControl);
 		
-		Tile back = new Tile(getNextTilePosition(), isPlayer);
-		addTile(back);
+		shield = new Shield(new Vector2<Double>(0.105,0.015), getNextTilePosition(), isPlayer,1);
+		addTile(shield);
 		
 		// Assigns the modules
 		modules[0] = reactor;
 		modules[1] = weaponControl;
+		modules[2] = engine;
+		modules[3] = shield;
 		
 		// Creates the gun of the ship
 		Weapon w = new DummyGun();
@@ -52,8 +52,8 @@ public class DummyShip extends Ship {
 		
 		// Places the weapon at the front
 		front.setWeapon(w);
-		back.setWeapon(w2);
-		mid.setWeapon(w3);
+		engine.setWeapon(w2);
+		shield.setWeapon(w3);
 		weaponControl.setWeapon(w4);
 		
 		// Adds a crew member to the ship

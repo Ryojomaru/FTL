@@ -1,5 +1,6 @@
 package module;
 
+import display.StdDraw;
 import display.Vector2;
 
 public class Shield extends Module{
@@ -20,5 +21,19 @@ public class Shield extends Module{
         allocatedEnergy = 0;
         amountDamage = 0;
         canBeManned = true;
+    }
+
+    @Override
+    public void drawHud(){
+        super.drawHud();
+        Double x = tilePos.getX();
+        Double y = tilePos.getY();
+        if(allocatedEnergy > 0) {
+            StdDraw.setPenColor(StdDraw.GRAY);
+            StdDraw.setPenRadius(0.005);
+            StdDraw.circle(x, y, 0.12);
+            StdDraw.setPenRadius();
+            StdDraw.setPenColor();
+        }
     }
 }
