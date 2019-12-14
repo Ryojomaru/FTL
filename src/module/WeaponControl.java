@@ -63,7 +63,7 @@ public class WeaponControl extends Module {
 	public WeaponControl(Vector2<Double> hudPos, Vector2<Double> tilePos, boolean isPlayer, int initialLevel, int amountWeapons) {
 		super(hudPos, tilePos, isPlayer);
 		name = "Weapons";
-		maxLevel = 8;
+		maxLevel = 4;
 		currentLevel = initialLevel;
 		allocatedEnergy = 0;
 		amountDamage = 0;
@@ -184,7 +184,7 @@ public class WeaponControl extends Module {
 		if (weapons[weapon] == null || !weapons[weapon].isCharged()) {
 			return null;
 		}
-		Vector2<Double> v = tile.getPosition();
+		Vector2<Double> v = tile.getWeaponPosition();
 		weapons[weapon].resetCharge();
 		if(weapons[weapon] instanceof LaserGun) { //on calcule la puissance du laser si c'est l'arme tirée
 			weapons[weapon].setShotDamage(Math.min(this.allocatedEnergy,((LaserGun)weapons[weapon]).getMaxDamage()));

@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcf1565a-02b8-4f20-b097-b2baaac790aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/module/Engine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/module/Shield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/main/Bindings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/Bindings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/main/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/main/World.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/module/Shield.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/module/Shield.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/DummyShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/DummyShip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FTL/ship/Ship.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTL/ship/Ship.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Bindings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Bindings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/Shield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/Shield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module/WeaponControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module/WeaponControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ship/DummyShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/DummyShip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ship/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ship/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ship/Tile.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +48,22 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -88,18 +108,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -116,7 +124,10 @@
       <workItem from="1574843107050" duration="2154000" />
       <workItem from="1574886943800" duration="208000" />
       <workItem from="1574888145213" duration="88000" />
-      <workItem from="1575379026846" duration="449000" />
+      <workItem from="1575379026846" duration="5956000" />
+      <workItem from="1576076574325" duration="12428000" />
+      <workItem from="1576165445060" duration="7772000" />
+      <workItem from="1576250352744" duration="6921000" />
     </task>
     <servers />
   </component>

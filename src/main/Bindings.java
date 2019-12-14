@@ -40,96 +40,119 @@ public class Bindings {
 			System.exit(0);
 		
 		// Module Energy Management
-		if(key.getKeyCode() == KeyEvent.VK_U && key.isShiftDown())
-			w.player.removeEnergy(1);
-		else if(key.getKeyCode() == KeyEvent.VK_U)
-			w.player.addEnergy(1);
-		
-		else if(key.getKeyCode() == KeyEvent.VK_J && key.isShiftDown())
-			w.player.removeEnergy(2);
-		else if(key.getKeyCode() == KeyEvent.VK_J)
-			w.player.addEnergy(2);
-		
-		else if(key.getKeyCode() == KeyEvent.VK_NUMPAD3 && key.isShiftDown())
-			w.player.removeEnergy(3);
-		else if(key.getKeyCode() == KeyEvent.VK_NUMPAD3)
-			w.player.addEnergy(3);
-		
-		else if(key.getKeyCode() == KeyEvent.VK_NUMPAD4 && key.isShiftDown())
-			w.player.removeEnergy(4);
-		else if(key.getKeyCode() == KeyEvent.VK_NUMPAD4)
-			w.player.addEnergy(4);
-		
-		else if(key.getKeyCode() == KeyEvent.VK_NUMPAD5 && key.isShiftDown())
-			w.player.removeEnergy(5);
-		else if(key.getKeyCode() == KeyEvent.VK_NUMPAD5)
-			w.player.addEnergy(5);
-		
-		
-		// Weapon Management
-		else if(key.getKeyCode() == KeyEvent.VK_A && key.isControlDown()){
-			for (Tile t : w.player.getLayout()){
-				if (t.isAimed())
-					w.player.shotWeapon(0);
-			}
-		}
-		else if(key.getKeyCode() == KeyEvent.VK_A && key.isShiftDown())
-			w.player.deactiveWeapon(0);
-		else if(key.getKeyCode() == KeyEvent.VK_A)
-			w.player.activeWeapon(0);
-		
-		else if(key.getKeyCode() == KeyEvent.VK_Z && key.isControlDown())
-			for (Tile t : w.player.getLayout()){
-				if (t.isAimed())
-					w.player.shotWeapon(1);
-			}
-		else if(key.getKeyCode() == KeyEvent.VK_Z && key.isShiftDown())
-			w.player.deactiveWeapon(1);
-		else if(key.getKeyCode() == KeyEvent.VK_Z)
-			w.player.activeWeapon(1);
-		
-		else if(key.getKeyCode() == KeyEvent.VK_E && key.isControlDown())
-			for (Tile t : w.player.getLayout()){
-				if (t.isAimed())
-					w.player.shotWeapon(2);
-			}
-		else if(key.getKeyCode() == KeyEvent.VK_E && key.isShiftDown())
-			w.player.deactiveWeapon(2);
-		else if(key.getKeyCode() == KeyEvent.VK_E)
-			w.player.activeWeapon(2);
-		
-		else if(key.getKeyCode() == KeyEvent.VK_R && key.isControlDown())
-			for (Tile t : w.player.getLayout()){
-				if (t.isAimed())
-					w.player.shotWeapon(3);
-			}
-		else if(key.getKeyCode() == KeyEvent.VK_R && key.isShiftDown())
-			w.player.deactiveWeapon(3);
-		else if(key.getKeyCode() == KeyEvent.VK_R)
-			w.player.activeWeapon(3);
-		
-		// Crew Management
-		else if(key.getKeyCode() == KeyEvent.VK_Q && key.isShiftDown())
-			w.player.unselectCrewMember();
-		else if(key.getKeyCode() == KeyEvent.VK_Q)
-			w.player.selectMember(0);
-		
-		else if(key.getKeyCode() == KeyEvent.VK_S && key.isShiftDown())
-			w.player.unselectCrewMember();
-		else if(key.getKeyCode() == KeyEvent.VK_S)
-			w.player.selectMember(1);
-		
-		else if(key.getKeyCode() == KeyEvent.VK_D && key.isShiftDown())
-			w.player.unselectCrewMember();
-		else if(key.getKeyCode() == KeyEvent.VK_D)
-			w.player.selectMember(2);
-		
-		else if(key.getKeyCode() == KeyEvent.VK_F && key.isShiftDown())
-			w.player.unselectCrewMember();
-		else if(key.getKeyCode() == KeyEvent.VK_F)
-			w.player.selectMember(3);
-		
-		// Aiming System
+
+        if(key.getKeyCode() == KeyEvent.VK_U && key.isShiftDown())
+            w.player.removeEnergy(1);
+        else if(key.getKeyCode() == KeyEvent.VK_U)
+            w.player.addEnergy(1);
+
+        else if(key.getKeyCode() == KeyEvent.VK_J && key.isShiftDown())
+            w.player.removeEnergy(2);
+        else if(key.getKeyCode() == KeyEvent.VK_J)
+            w.player.addEnergy(2);
+
+        else if(key.getKeyCode() == KeyEvent.VK_NUMPAD3 && key.isShiftDown())
+            w.player.removeEnergy(3);
+        else if(key.getKeyCode() == KeyEvent.VK_NUMPAD3)
+            w.player.addEnergy(3);
+
+        else if(key.getKeyCode() == KeyEvent.VK_NUMPAD4 && key.isShiftDown())
+            w.player.removeEnergy(4);
+        else if(key.getKeyCode() == KeyEvent.VK_NUMPAD4)
+            w.player.addEnergy(4);
+
+        else if(key.getKeyCode() == KeyEvent.VK_NUMPAD5 && key.isShiftDown())
+            w.player.removeEnergy(5);
+        else if(key.getKeyCode() == KeyEvent.VK_NUMPAD5)
+            w.player.addEnergy(5);
+
+
+            // Weapon Management
+        else if(key.getKeyCode() == KeyEvent.VK_A && key.isControlDown()){
+            for (Tile t : w.opponent.getLayout()){
+                if (t.isAimed())
+                    if (w.player.isWeaponShotCorrectly(w.opponent)){
+                        w.player.shotWeapon(0);
+                    }  else {
+                        w.player.missShotWeapon(0);
+                    }
+            }
+        }
+        else if(key.getKeyCode() == KeyEvent.VK_A && key.isShiftDown())
+            w.player.deactiveWeapon(0);
+        else if(key.getKeyCode() == KeyEvent.VK_A)
+            w.player.activeWeapon(0);
+
+        else if(key.getKeyCode() == KeyEvent.VK_Z && key.isControlDown())
+            for (Tile t : w.opponent.getLayout()){
+                if (t.isAimed())
+                    if (w.player.isWeaponShotCorrectly(w.opponent)){
+                        w.player.shotWeapon(1);
+                    }  else {
+                        w.player.missShotWeapon(1);
+                    }
+            }
+        else if(key.getKeyCode() == KeyEvent.VK_Z && key.isShiftDown())
+            w.player.deactiveWeapon(1);
+        else if(key.getKeyCode() == KeyEvent.VK_Z)
+            w.player.activeWeapon(1);
+
+        else if(key.getKeyCode() == KeyEvent.VK_E && key.isControlDown())
+            for (Tile t : w.opponent.getLayout()){
+                if (t.isAimed())
+                    if (w.player.isWeaponShotCorrectly(w.opponent)){
+                        w.player.shotWeapon(2);
+                    }  else {
+                        w.player.missShotWeapon(2);
+                    }
+            }
+        else if(key.getKeyCode() == KeyEvent.VK_E && key.isShiftDown())
+            w.player.deactiveWeapon(2);
+        else if(key.getKeyCode() == KeyEvent.VK_E)
+            w.player.activeWeapon(2);
+
+        else if(key.getKeyCode() == KeyEvent.VK_R && key.isControlDown())
+            for (Tile t : w.opponent.getLayout()){
+                if (t.isAimed())
+                    if (w.player.isWeaponShotCorrectly(w.opponent)){
+                        w.player.shotWeapon(3);
+                    }  else {
+                        w.player.missShotWeapon(3);
+                    }
+            }
+        else if(key.getKeyCode() == KeyEvent.VK_R && key.isShiftDown())
+            w.player.deactiveWeapon(3);
+        else if(key.getKeyCode() == KeyEvent.VK_R)
+            w.player.activeWeapon(3);
+
+            // Crew Management
+        else if(key.getKeyCode() == KeyEvent.VK_Q && key.isShiftDown())
+            w.player.unselectCrewMember();
+        else if(key.getKeyCode() == KeyEvent.VK_Q)
+            w.player.selectMember(0);
+
+        else if(key.getKeyCode() == KeyEvent.VK_S && key.isShiftDown())
+            w.player.unselectCrewMember();
+        else if(key.getKeyCode() == KeyEvent.VK_S)
+            w.player.selectMember(1);
+
+        else if(key.getKeyCode() == KeyEvent.VK_D && key.isShiftDown())
+            w.player.unselectCrewMember();
+        else if(key.getKeyCode() == KeyEvent.VK_D)
+            w.player.selectMember(2);
+
+        else if(key.getKeyCode() == KeyEvent.VK_F && key.isShiftDown())
+            w.player.unselectCrewMember();
+        else if(key.getKeyCode() == KeyEvent.VK_F)
+            w.player.selectMember(3);
+
+        else if(key.getKeyCode() == KeyEvent.VK_X && w.player.isCrewMemberSelected()){
+            w.player.getNextUnselectedTile(w.player.getSelectedTile()).setCrewMember(w.player.getSelectedMember());
+            w.player.getSelectedTile().removeCrewMember();
+            w.player.unselectCrewMember();
+        }
+
+        // Aiming System
 		else if(key.getKeyCode() == KeyEvent.VK_UP)
 			processArrowKey(KeyEvent.VK_UP);
 		else if(key.getKeyCode() == KeyEvent.VK_DOWN)

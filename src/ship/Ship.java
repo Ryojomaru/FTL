@@ -3,13 +3,12 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Random;
 
 import display.StdDraw;
 import display.Vector2;
 import main.World;
-import module.Module;
-import module.Reactor;
-import module.WeaponControl;
+import module.*;
 import weapon.Projectile;
 import weapon.Weapon;
 
@@ -25,6 +24,8 @@ public abstract class Ship {
 	
 	protected Reactor					reactor;		// The reactor of the ship
 	protected WeaponControl				weaponControl;	// The weapon control system
+	protected Engine					engine;			// Engine system
+	protected Shield					shield;			// Shield system
 
 	protected Collection<CrewMember> 	crew;			// The crew members in the ship
 	protected Collection<Tile>			layout;			// The layout of the ship
@@ -34,7 +35,8 @@ public abstract class Ship {
 	protected Tile						target;			// The targeted tile of the enemy ship
 	protected CrewMember				selectedMember; // The currently selected crew member
 
-	protected DecimalFormat df = new DecimalFormat("#.##");
+	protected Tile 						selectedTile;	// The Tile where the currently selected crew memebr is
+	protected DecimalFormat 			df = new DecimalFormat("#.##"); // To round integer to the right format
 	/**
 	 * Creates a Ship for the player or the opponent at the provided position.
 	 * @param isPlayer whether the ship is for the player
@@ -56,8 +58,32 @@ public abstract class Ship {
 	 * @param player the enemy of the AI
 	 */
 	public void ai(Ship player) {
+		Random r = new Random();
+		boolean buffer = r.nextBoolean();
 		if (isPlayer)
-			return;
+
+			if (shield.getAllocatedEnergy() == 0){
+				shield.addEnergy();
+			}
+			if (engine.getAllocatedEnergy() == 0){
+				shield.addEnergy();
+			}
+			if (weaponControl.getAllocatedEnergy() == 0){
+				weaponControl.addEnergy();
+				weaponControl.activeWeapon(1);
+			}
+
+			if (weaponControl.getAllocatedEnergy() > 0 && weaponControl.getWeapon(1).isCharged()){
+				if (r.nextInt(100) > 98){
+					if (buffer){
+						aimLeft(player);
+						shotWeapon(1);
+					} else {
+						aimDown(player);
+						shotWeapon(1);
+					}
+				}
+			}
 	}
 	
 	/**
@@ -159,6 +185,7 @@ public abstract class Ship {
 		for (CrewMember m : crew)
 			if (j++ == i) {
 				selectedMember = m;
+				selectedTile = getSelectedCrewTile(m);
 				selectedMember.select();
 				return;
 			}
@@ -210,7 +237,28 @@ public abstract class Ship {
 	private Tile getFirstTile() {
 		return layout.iterator().next();
 	}
-	
+
+	private Tile getSelectedCrewTile(CrewMember m) {
+		Iterator<Tile> it = layout.iterator();
+		while (it.hasNext()) {
+			Tile t = it.next();
+			if(t.isCrewMember(m)) return t;
+		}
+		return null;
+	}
+
+	public Tile getNextUnselectedTile(Tile current){
+	    Iterator<Tile> it = layout.iterator();
+	    boolean a = false;
+	    while (it.hasNext()){
+	        Tile t = it.next();
+			if (a){
+				return t;
+			}
+	        if (t == current) a = true;
+        }
+	    return layout.iterator().next();
+    }
 	// Energy Methods
 
 	/**
@@ -269,12 +317,36 @@ public abstract class Ship {
 	public void shotWeapon(int weapon) {
 	    Projectile p = weaponControl.shotWeapon(weapon, getWeaponTile(weaponControl.getWeapon(weapon)),
 				new Vector2<Double>(
-						target.getCenterPosition().getX() - position.getX(),
-						target.getCenterPosition().getY() - position.getY()));
+						target.getCenterPosition().getX() -
+								getWeaponTile(weaponControl.getWeapon(weapon)).getWeaponPosition().getX(),
+						target.getCenterPosition().getY() -
+								getWeaponTile(weaponControl.getWeapon(weapon)).getWeaponPosition().getY()));
 		if (p != null)
 			projectiles.add(p);
 	}
-	
+
+	public void missShotWeapon(int weapon){
+		Random r = new Random();
+		if (r.nextBoolean()){
+			Projectile p = weaponControl.shotWeapon(weapon, getWeaponTile(weaponControl.getWeapon(weapon)),
+					new Vector2<Double>(
+							target.getCenterPosition().getX() -
+									getWeaponTile(weaponControl.getWeapon(weapon)).getWeaponPosition().getX() * 0.5,
+							target.getCenterPosition().getY() -
+									getWeaponTile(weaponControl.getWeapon(weapon)).getWeaponPosition().getY() * 0.5));
+			if (p != null)
+				projectiles.add(p);
+		} else {
+			Projectile p = weaponControl.shotWeapon(weapon, getWeaponTile(weaponControl.getWeapon(weapon)),
+					new Vector2<Double>(
+							target.getCenterPosition().getX() -
+									getWeaponTile(weaponControl.getWeapon(weapon)).getWeaponPosition().getX() * 2,
+							target.getCenterPosition().getY() -
+									getWeaponTile(weaponControl.getWeapon(weapon)).getWeaponPosition().getY() * 2));
+			if (p != null)
+				projectiles.add(p);
+		}
+	}
 	/**
 	 * Gives the tile on which the weapon is.
 	 * @param w the weapon to get the tile from
@@ -286,7 +358,11 @@ public abstract class Ship {
 				return t;
 		return null;
 	}
-	
+
+	public boolean isWeaponShotCorrectly(Ship opponent){
+		Random r = new Random();
+		return r.nextInt(100) >= opponent.getEngine().getDodge();
+	}
 	// Projectile Methods
 	
 	/**
@@ -397,5 +473,25 @@ public abstract class Ship {
 
 	public Collection<Tile> getLayout() {
 		return layout;
+	}
+
+    public CrewMember getSelectedMember() {
+        return selectedMember;
+    }
+
+	public int getCurrentHull() {
+		return currentHull;
+	}
+
+	public Tile getSelectedTile() {
+		return selectedTile;
+	}
+
+	public Engine getEngine() {
+		return engine;
+	}
+
+	public void setProjectiles(Collection<Projectile> projectiles) {
+		this.projectiles = projectiles;
 	}
 }
