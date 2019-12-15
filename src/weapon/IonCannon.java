@@ -11,17 +11,24 @@ public class IonCannon extends Weapon {
     /**
      * A dummy projectile is an example of a projectile
      */
-    private class IonProjectile extends Projectile {
+    public class IonProjectile extends Projectile {
 
-        public IonProjectile(Vector2<Double> pos, Vector2<Double> dir) {
+        private Double time; //the time for which the ion will deactivate something
+
+        public IonProjectile(Vector2<Double> pos, Vector2<Double> dir, Double time) {
             super(0.03, 0.003);
             this.x = pos.getX();
             this.y = pos.getY();
-            this.cSpeed = 1.2;
+            this.cSpeed = 0.49;
             this.xSpeed = dir.getX()*cSpeed;
             this.ySpeed = dir.getY()*cSpeed;
             this.color = StdDraw.RED;
             this.damage = shotDamage;
+            this.time = time;
+        }
+
+        public Double getTime() {
+            return time;
         }
     }
 
@@ -56,7 +63,7 @@ public class IonCannon extends Weapon {
      */
     @Override
     public Projectile shot(Vector2<Double> pos, Vector2<Double> dir) {
-        return new IonProjectile(pos, dir);
+        return new IonProjectile(pos, dir, (double)this.deactivationTime);
     }
 
 

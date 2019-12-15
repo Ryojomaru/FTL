@@ -222,4 +222,12 @@ public class Tile {
     public boolean isAimed() {
         return isAimed;
     }
+
+    public int nbCrewMembers() {
+		try {
+			return this.members.size();
+		} catch (NullPointerException e) {
+			return 0;
+		}
+	}
 }

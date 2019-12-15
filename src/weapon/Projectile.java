@@ -59,6 +59,8 @@ public abstract class Projectile {
 		this.y = y;
 	}
 
+	public Vector2<Double> getPosition() {return new Vector2<Double>(this.x, this.y);}
+
 	/**
 	 * Checks whether the projectile is out of the screen.
 	 * @return whether the projectile is out of the screen
