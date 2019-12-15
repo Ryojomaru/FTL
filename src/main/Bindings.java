@@ -51,19 +51,19 @@ public class Bindings {
         else if(key.getKeyCode() == KeyEvent.VK_J)
             w.player.addEnergy(2);
 
-        else if(key.getKeyCode() == KeyEvent.VK_NUMPAD3 && key.isShiftDown())
+        else if(key.getKeyCode() == KeyEvent.VK_I && key.isShiftDown())
             w.player.removeEnergy(3);
-        else if(key.getKeyCode() == KeyEvent.VK_NUMPAD3)
+        else if(key.getKeyCode() == KeyEvent.VK_I)
             w.player.addEnergy(3);
 
-        else if(key.getKeyCode() == KeyEvent.VK_NUMPAD4 && key.isShiftDown())
+        else if(key.getKeyCode() == KeyEvent.VK_K && key.isShiftDown())
             w.player.removeEnergy(4);
-        else if(key.getKeyCode() == KeyEvent.VK_NUMPAD4)
+        else if(key.getKeyCode() == KeyEvent.VK_K)
             w.player.addEnergy(4);
 
-        else if(key.getKeyCode() == KeyEvent.VK_NUMPAD5 && key.isShiftDown())
+        else if(key.getKeyCode() == KeyEvent.VK_O && key.isShiftDown())
             w.player.removeEnergy(5);
-        else if(key.getKeyCode() == KeyEvent.VK_NUMPAD5)
+        else if(key.getKeyCode() == KeyEvent.VK_O)
             w.player.addEnergy(5);
 
 

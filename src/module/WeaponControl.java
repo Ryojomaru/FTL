@@ -3,10 +3,7 @@ import display.Button;
 import display.StdDraw;
 import display.Vector2;
 import ship.Tile;
-import weapon.IonCannon;
-import weapon.LaserGun;
-import weapon.Projectile;
-import weapon.Weapon;
+import weapon.*;
 
 /**
  * A WeaponControl is a Module which handles weapons energy and activation.
@@ -102,7 +99,7 @@ public class WeaponControl extends Module {
 			if (w != null)
 				energy += w.isActivated() ? w.getRequiredPower() : 0;
 		Weapon w = weapons[weapon];
-		if (allocatedEnergy-amountDamage < energy + w.getRequiredPower())
+		if (this.getUsableEnergy() < energy + w.getRequiredPower())
 			return false;
 		w.activate();
 		return true;
@@ -127,6 +124,7 @@ public class WeaponControl extends Module {
 	
 	/**
 	 * Charges the weapon.
+	 * Boosted by crewmembers.
 	 * @param time the charging time to increase the weapon's charge by
 	 */
 	public void chargeTime(double time) {
@@ -134,7 +132,7 @@ public class WeaponControl extends Module {
 
 			if (w != null) {
 				if (w.isActivated()) {
-					w.charge(time); }
+					w.charge(time*(1.0 + (0.05*this.nbCrewMembers()))); }
 				else
 					w.charge(-3 * time);
 			}
@@ -170,10 +168,16 @@ public class WeaponControl extends Module {
 			StdDraw.setPenColor(StdDraw.BLACK);
 			StdDraw.text(x+0.1+(0.1*i), y+0.1, w.getName());
 		}
+
+		StdDraw.setPenColor(StdDraw.MAGENTA);
+		for(int i = 0; i < this.getNbMissiles(); i++) { //draws the number of missiles left
+			StdDraw.filledEllipse(0.1+0.05*i, 0.85, 0.02,0.007);
+
+		}
+		StdDraw.setPenColor();
 	}
 	
 	/**
-	 * //TODO: add code for Ion deactivation
 	 * Shots the weapon from the tile in the direction provided.
 	 * @param weapon the weapon to shot
 	 * @param tile the tile to shot it from
@@ -187,12 +191,10 @@ public class WeaponControl extends Module {
 		Vector2<Double> v = tile.getWeaponPosition();
 		weapons[weapon].resetCharge();
 		if(weapons[weapon] instanceof LaserGun) { //on calcule la puissance du laser si c'est l'arme tirée
-			weapons[weapon].setShotDamage(Math.min(this.allocatedEnergy,((LaserGun)weapons[weapon]).getMaxDamage()));
-			System.out.println(weapons[weapon].getShotDamage());//TODO : remove when done testing
+			weapons[weapon].setShotDamage(Math.min(this.getUsableEnergy(),((LaserGun)weapons[weapon]).getMaxDamage()));
 		} else if(weapons[weapon] instanceof IonCannon) { //on calcule la puissance du laser si c'est l'arme tirée
-			((IonCannon)weapons[weapon]).setDeactivationTime(Math.min(this.allocatedEnergy,((IonCannon)weapons[weapon]).getMaxDeactivationTime()));
+			((IonCannon)weapons[weapon]).setDeactivationTime(Math.min(this.getUsableEnergy(),((IonCannon)weapons[weapon]).getMaxDeactivationTime()));
 		}
-		System.out.println("hi");//TODO: remove when done testing
 		return weapons[weapon].shot(new Vector2<Double>(v.getX(), v.getY()), dir );
 	}
 	
@@ -218,6 +220,35 @@ public class WeaponControl extends Module {
 			return true;
 		}
 		return false;
+	}
+
+	/**
+	 * checks if a weapon is already possesed.
+	 * @param w the weapon to test
+	 * @return true if the weapon is already in the arsenal
+	 */
+	public boolean hasWeapon(Weapon w) {
+		for(Weapon weap: weapons) {
+			if(w.equals(w)) return true;
+		}
+		return false;
+	}
+
+	private int getNbMissiles() {
+		for(Weapon w : weapons) {
+			if(w instanceof MissileLauncher) {
+				return ((MissileLauncher) w).getMissilesLeft();
+			}
+		}
+		return 0;
+	}
+
+	public void addMissile() {
+		for(Weapon weap : weapons) {
+			if(weap instanceof MissileLauncher) {
+				((MissileLauncher) weap).addMissile();
+			}
+		}
 	}
 	
 	
