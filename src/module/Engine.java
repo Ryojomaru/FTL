@@ -24,7 +24,12 @@ public class Engine extends Module {
         canBeManned = true;
     }
 
+    /**
+     * gives the dodging percentage
+     * Improved by crewmembers
+     * @return the dodging percentage (ex, 15 means 15% chance to dodge)
+     */
     public int getDodge() {
-        return 5 * currentLevel;
+        return ((5 * (this.getUsableEnergy() + nbCrewMembers())));
     }
 }

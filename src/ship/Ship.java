@@ -9,7 +9,9 @@ import display.StdDraw;
 import display.Vector2;
 import main.World;
 import module.*;
+import module.Module;
 import weapon.Projectile;
+import weapon.Shotgun;
 import weapon.Weapon;
 
 /**
@@ -25,7 +27,7 @@ public abstract class Ship {
 	protected Reactor					reactor;		// The reactor of the ship
 	protected WeaponControl				weaponControl;	// The weapon control system
 	protected Engine					engine;			// Engine system
-	protected Shield					shield;			// Shield system
+	protected ShieldModule shield;			// Shield system
 
 	protected Collection<CrewMember> 	crew;			// The crew members in the ship
 	protected Collection<Tile>			layout;			// The layout of the ship
@@ -37,6 +39,7 @@ public abstract class Ship {
 
 	protected Tile 						selectedTile;	// The Tile where the currently selected crew memebr is
 	protected DecimalFormat 			df = new DecimalFormat("#.##"); // To round integer to the right format
+
 	/**
 	 * Creates a Ship for the player or the opponent at the provided position.
 	 * @param isPlayer whether the ship is for the player
@@ -70,17 +73,17 @@ public abstract class Ship {
 			}
 			if (weaponControl.getAllocatedEnergy() == 0){
 				weaponControl.addEnergy();
-				weaponControl.activeWeapon(1);
+				weaponControl.activeWeapon(0);
 			}
 
-			if (weaponControl.getAllocatedEnergy() > 0 && weaponControl.getWeapon(1).isCharged()){
+			if (weaponControl.getAllocatedEnergy() > 0 && weaponControl.getWeapon(0).isCharged()){
 				if (r.nextInt(100) > 98){
 					if (buffer){
 						aimLeft(player);
-						shotWeapon(1);
+						shotWeapon(0);
 					} else {
 						aimDown(player);
-						shotWeapon(1);
+						shotWeapon(0);
 					}
 				}
 			}
@@ -91,8 +94,18 @@ public abstract class Ship {
 	 * @param elapsedTime the time elapsed since the last step
 	 */
 	public void step(double elapsedTime) {
+		rechargeShields(elapsedTime);
 		chargeWeapons(elapsedTime);
+
 		processProjectiles(elapsedTime);
+
+		shield.repair(elapsedTime);
+		engine.repair(elapsedTime);
+		weaponControl.repair(elapsedTime);
+
+		shield.reactivate(elapsedTime);
+		engine.reactivate(elapsedTime);
+		weaponControl.reactivate(elapsedTime);
 	}
 	
 	// Drawing Methods
@@ -102,6 +115,7 @@ public abstract class Ship {
 	 */
 	public void draw() {
 		drawTiles();
+		shield.drawShields();
 		for (Projectile p : projectiles)
 			p.draw();
 	}
@@ -311,16 +325,22 @@ public abstract class Ship {
 	}
 
 	/**
+	 * recharges the shields by the time proviced.
+	 * @param time the time to recharge the shields by.
+	 */
+	public void rechargeShields(double time) {shield.rechargeShields(time);}
+
+	/**
 	 * Shots a weapon.
 	 * @param weapon the weapon to shot
 	 */
 	public void shotWeapon(int weapon) {
-	    Projectile p = weaponControl.shotWeapon(weapon, getWeaponTile(weaponControl.getWeapon(weapon)),
-				new Vector2<Double>(
-						target.getCenterPosition().getX() -
-								getWeaponTile(weaponControl.getWeapon(weapon)).getWeaponPosition().getX(),
-						target.getCenterPosition().getY() -
-								getWeaponTile(weaponControl.getWeapon(weapon)).getWeaponPosition().getY()));
+		Projectile p = weaponControl.shotWeapon(weapon, getWeaponTile(weaponControl.getWeapon(weapon)),
+			new Vector2<Double>(
+				target.getCenterPosition().getX() -
+						getWeaponTile(weaponControl.getWeapon(weapon)).getWeaponPosition().getX(),
+				target.getCenterPosition().getY() -
+						getWeaponTile(weaponControl.getWeapon(weapon)).getWeaponPosition().getY()));
 		if (p != null)
 			projectiles.add(p);
 	}
@@ -391,6 +411,7 @@ public abstract class Ship {
 	public void applyDamage(Projectile p) {
 		if (this.currentHull - p.getDamage() < 0) this.currentHull = 0;
 		else this.currentHull -= p.getDamage();
+		System.out.println("You took "+ p.getDamage() +" damage.");
 	}
 	
 	// Aiming Methods
@@ -493,5 +514,25 @@ public abstract class Ship {
 
 	public void setProjectiles(Collection<Projectile> projectiles) {
 		this.projectiles = projectiles;
+	}
+
+	public ShieldModule getShield() {
+		return shield;
+	}
+
+	public WeaponControl getWeaponControl() {
+		return weaponControl;
+	}
+
+	public Reactor getReactor() {
+		return reactor;
+	}
+
+	/**
+	 * repairs the hull by a certain amount. Does not go over the total hull.
+	 * @param repair the amount of damage to repair
+	 */
+	public void repairHull(int repair) {
+		this.currentHull = Math.min(currentHull+repair,totalHull);
 	}
 }

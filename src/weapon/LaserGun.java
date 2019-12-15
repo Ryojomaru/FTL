@@ -16,7 +16,7 @@ public class LaserGun extends Weapon {
             this.y = pos.getY();
             this.startX = x;
             this.startY = y;
-            this.cSpeed = 0.6;
+            this.cSpeed = 0.50;
             this.xSpeed = dir.getX()*cSpeed;
             this.ySpeed = dir.getY()*cSpeed;
             this.damage = shotDamage;
@@ -42,7 +42,7 @@ public class LaserGun extends Weapon {
 
     public LaserGun() {
         name = "Laser";
-        chargeTime = 5;
+        chargeTime = 1;
         shotDamage = 0;
         shotPerCharge = 1;
         requiredPower = 1;

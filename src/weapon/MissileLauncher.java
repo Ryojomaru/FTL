@@ -5,7 +5,7 @@ import display.Vector2;
 
 public class MissileLauncher extends Weapon {
 
-    private class Missile extends Projectile {
+    public class Missile extends Projectile {
 
         /**
          * Creates a Missile of the provided dimensions.
@@ -13,7 +13,7 @@ public class MissileLauncher extends Weapon {
          * @param pos of the projectile
          * @param dir of the missile once shot
          */
-        private Missile(Vector2<Double> pos, Vector2<Double> dir) {
+        protected Missile(Vector2<Double> pos, Vector2<Double> dir) {
             super(0.02, 0.015);
             this.x = pos.getX();
             this.y = pos.getY();
@@ -44,8 +44,11 @@ public class MissileLauncher extends Weapon {
         shotDamage = 4;
         shotPerCharge = 1;
         requiredPower = 1;
-        maxCapacity = 3;
-        missilesLeft = maxCapacity;
+        missilesLeft = 3;
+    }
+
+    public int getMissilesLeft() {
+        return missilesLeft;
     }
 
     @Override
@@ -55,4 +58,6 @@ public class MissileLauncher extends Weapon {
             return new Missile(pos, dir);
         } else return null;
     }
+
+    public void addMissile() {missilesLeft++;}
 }

@@ -24,11 +24,25 @@ public class Reactor extends Module {
 		// The reactor does not have a name to distinct it from the other modules
 		// Indeed, this module cannot be destroyed and is 'really' placed in the ship
 		name = null;
-		maxLevel = 25;
+		maxLevel = 15;
 		currentLevel = initialLevel;
 		allocatedEnergy = initialLevel;
 		amountDamage = -1;
 		canBeManned = false;
 	}
+
+	/**
+	 * increases the amount of energy by the specified amount
+	 * @param power to add
+	 */
+	public void increaseEnergy(int power){
+		this.allocatedEnergy = Math.min(this.allocatedEnergy + power, currentLevel);
+	}
+
+	/**
+	 * empty method just in case (a reactor cannot be deactivated).
+	 */
+	@Override
+	public void deactivate(Double time){ }
 	
 }
