@@ -41,6 +41,8 @@ public class World {
 		opponent = ennemies[ennemyIndex];
 		time = System.currentTimeMillis();
 		canContinue = true;
+		hasChosenRandomReward = false;
+		hasChosenReward = false;
 	}
 	
 	/**
@@ -66,12 +68,22 @@ public class World {
 			time = System.currentTimeMillis();
 		}
 		if (opponent.getCurrentHull() == 0){
+			if (opponent.getTarget() != null){
+				opponent.getTarget().unmarkTarget();
+			}
+			opponent.setTarget(null);
+			player.setTarget(null);
 			canContinue = false;
 			StdDraw.clear();
 			player.getProjectiles().clear();
 			draw();
-			nextEnnemy();
-			opponent = ennemies[ennemyIndex];
+			showRewardScreen();
+			if (canContinue){
+				hasChosenReward = false;
+				hasChosenRandomReward = false;
+				nextEnnemy();
+				opponent = ennemies[ennemyIndex];
+			}
 		}
 
 		if (player.getCurrentHull() == 0){
@@ -170,7 +182,7 @@ public class World {
 	 */
 	private void nextEnnemy(){
 		this.ennemyIndex++;
-		if(ennemyIndex > ennemies.length -1) ennemyIndex = ennemies.length -1;
+		if(this.ennemyIndex > 2) System.exit(0);
 	}
 
 
@@ -178,8 +190,9 @@ public class World {
 	 * All that follows is only useful for the reward screen.
 	 */
 
-	/*
+
 	private boolean hasChosenReward;
+	private boolean hasChosenRandomReward;
 
 	private class RewardButton extends Button {
 		private int effect;
@@ -196,22 +209,27 @@ public class World {
 				case 0:
 					player.getWeaponControl().levelUp();
 					hasChosenReward = true;
+					canContinue = true;
 					break;
 				case 2:
 					player.getReactor().levelUp();
 					hasChosenReward = true;
+					canContinue = true;
 					break;
 				case 3:
 					player.getShield().levelUp();
 					hasChosenReward = true;
+					canContinue = true;
 					break;
 				case 4:
 					player.getEngine().levelUp();
 					hasChosenReward = true;
+					canContinue = true;
 					break;
 				default: //1 is put as default as a safety measure
 					player.getReactor().increaseEnergy(3);
 					hasChosenReward = true;
+					canContinue = true;
 					break;
 
 			}
@@ -230,39 +248,50 @@ public class World {
 
 	}
 
+	/**
+	 * Show reward buttons and give a random reward if it was not given yet
+	 */
+
 	public void showRewardScreen() {
-		Button b0 = new RewardButton(new Vector2<Double>(0.075,0.1),new Vector2<Double>(0.25,0.175),0);
-		Button b1 = new RewardButton(new Vector2<Double>(0.375,0.1),new Vector2<Double>(0.25,0.175),1);
-		Button b2 = new RewardButton(new Vector2<Double>(0.675,0.1),new Vector2<Double>(0.25,0.175),2);
-		Button b3 = new RewardButton(new Vector2<Double>(0.075,0.3),new Vector2<Double>(0.25,0.175),3);
-		Button b4 = new RewardButton(new Vector2<Double>(0.675,0.3),new Vector2<Double>(0.25,0.175),4);
+		Button b0 = new RewardButton(new Vector2<Double>(0.1,0.65),new Vector2<Double>(0.075,0.075),0);
+		Button b1 = new RewardButton(new Vector2<Double>(0.3,0.65),new Vector2<Double>(0.075,0.075),1);
+		Button b2 = new RewardButton(new Vector2<Double>(0.5,0.65),new Vector2<Double>(0.075,0.075),2);
+		Button b3 = new RewardButton(new Vector2<Double>(0.7,0.65),new Vector2<Double>(0.075,0.075),3);
+		Button b4 = new RewardButton(new Vector2<Double>(0.9,0.65),new Vector2<Double>(0.075,0.075),4);
+		if (!canContinue){
 
-		randomReward();
-		b0.draw();
-		b1.draw();
-		b2.draw();
-		b3.draw();
-		b4.draw();
+			if (!hasChosenRandomReward){
+				randomReward();
+				hasChosenRandomReward = true;
+			}
 
-		StdDraw.text(0.1,0.15,"Weapon lvl up");
-		StdDraw.text(0.4,0.15,"Energy +3");
-		StdDraw.text(0.7,0.15,"Reactor lvl up");
-		StdDraw.text(0.1,0.35,"Shields lvl up");
-		StdDraw.text(0.7,0.35,"Engine lvl up");
+			b0.draw();
+			b1.draw();
+			b2.draw();
+			b3.draw();
+			b4.draw();
 
-		hasChosenReward = false;
-		while(!hasChosenReward){ }//waits for a reward to be chosen
-		StdDraw.clear();
-		b0.destroy();
-		b1.destroy();
-		b2.destroy();
-		b3.destroy();
-		b4.destroy();
+			StdDraw.text(0.1,0.65,"Weapon lvl up");
+			StdDraw.text(0.3,0.65,"Energy +3");
+			StdDraw.text(0.5,0.65,"Reactor lvl up");
+			StdDraw.text(0.7,0.65,"Shields lvl up");
+			StdDraw.text(0.9,0.65,"Engine lvl up");
 
+		}
 
-
-
+		if(canContinue){
+			StdDraw.clear();
+			b0.destroy();
+			b1.destroy();
+			b2.destroy();
+			b3.destroy();
+			b4.destroy();
+		}
 	}
+
+	/**
+	 * Give the player a random reward
+	 */
 
 	public void randomReward(){
 		boolean hasPicked = false;
@@ -297,5 +326,5 @@ public class World {
 
 			}
 		}
-	}*/
+	}
 }

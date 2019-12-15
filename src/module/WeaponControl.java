@@ -234,6 +234,10 @@ public class WeaponControl extends Module {
 		return false;
 	}
 
+	/**
+	 * Give number of missiles
+	 * @return Number of missiles
+	 */
 	private int getNbMissiles() {
 		for(Weapon w : weapons) {
 			if(w instanceof MissileLauncher) {
@@ -243,6 +247,9 @@ public class WeaponControl extends Module {
 		return 0;
 	}
 
+	/**
+	 * Add a missile
+	 */
 	public void addMissile() {
 		for(Weapon weap : weapons) {
 			if(weap instanceof MissileLauncher) {
