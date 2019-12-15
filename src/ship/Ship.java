@@ -252,6 +252,12 @@ public abstract class Ship {
 		return layout.iterator().next();
 	}
 
+	/**
+	 * Give the Tile where a crew member is
+	 * @param m the selected crew membre
+	 * @return The tile where the crew membre is
+	 */
+
 	private Tile getSelectedCrewTile(CrewMember m) {
 		Iterator<Tile> it = layout.iterator();
 		while (it.hasNext()) {
@@ -260,6 +266,12 @@ public abstract class Ship {
 		}
 		return null;
 	}
+
+	/**
+	 * Give the next unselected Tile starting at a given position
+	 * @param current Starting Tile
+	 * @return The next unselected Tile
+	 */
 
 	public Tile getNextUnselectedTile(Tile current){
 	    Iterator<Tile> it = layout.iterator();
@@ -345,6 +357,11 @@ public abstract class Ship {
 			projectiles.add(p);
 	}
 
+	/**
+	 * If the opponent as dodge the shot
+	 * @param weapon the weapon to shot
+	 */
+
 	public void missShotWeapon(int weapon){
 		Random r = new Random();
 		if (r.nextBoolean()){
@@ -378,6 +395,12 @@ public abstract class Ship {
 				return t;
 		return null;
 	}
+
+	/**
+	 * Test if the target ship is hit by the shot
+	 * @param opponent target ship
+	 * @return if the target ship is hit
+	 */
 
 	public boolean isWeaponShotCorrectly(Ship opponent){
 		Random r = new Random();
@@ -472,7 +495,7 @@ public abstract class Ship {
 			return;
 		}
 		Tile nextTile = new Tile(new Vector2<>(target.getPosition().getX() + 0.02,
-				target.getPosition().getY() + 0.01), false);
+				target.getPosition().getY()), false);
 		changeAim(opponent, nextTile);
 	}
 
@@ -526,6 +549,14 @@ public abstract class Ship {
 
 	public Reactor getReactor() {
 		return reactor;
+	}
+
+	public Tile getTarget() {
+		return target;
+	}
+
+	public void setTarget(Tile target) {
+		this.target = target;
 	}
 
 	/**

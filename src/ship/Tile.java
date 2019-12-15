@@ -223,7 +223,12 @@ public class Tile {
         return isAimed;
     }
 
-    public int nbCrewMembers() {
+	/**
+	 * Give the amount of crew member
+	 * @return How many crew member there are
+	 */
+
+	public int nbCrewMembers() {
 		try {
 			return this.members.size();
 		} catch (NullPointerException e) {
